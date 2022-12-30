@@ -2,43 +2,44 @@
 
 namespace System\Router\Web;
 
-class Route{
+class Route
+{
 
-    public static function get($url, $executeMethod, $name = null){
-
-        $executeMethod = explode('@', $executeMethod);
-        $class = $executeMethod[0];
-        $method = $executeMethod[1];
+    public static function add($methods, $url, $action, $options)
+    {
         global $routes;
-        array_push($routes['get'], array('url' => trim($url, "/ "), 'class' => $class, 'method' => $method, 'name' => $name));
+        foreach ($methods as $method) {
+            array_push($routes[$method], ['url' => $url, 'action' => $action, 'options' => $options]);
+        }
     }
 
-    public static function post($url, $executeMethod, $name = null){
-
-        $executeMethod = explode('@', $executeMethod);
-        $class = $executeMethod[0];
-        $method = $executeMethod[1];
-        global $routes;
-        array_push($routes['post'], array('url' => trim($url, "/ "), 'class' => $class, 'method' => $method, 'name' => $name));
+    public static function get($url, $action, $options = [])
+    {
+        self::add(['get'], $url, $action, $options);
     }
-
-    public static function put($url, $executeMethod, $name = null){
-
-        $executeMethod = explode('@', $executeMethod);
-        $class = $executeMethod[0];
-        $method = $executeMethod[1];
-        global $routes;
-        array_push($routes['put'], array('url' => trim($url, "/ "), 'class' => $class, 'method' => $method, 'name' => $name));
+    public static function post($url, $action, $options = [])
+    {
+        self::add(['post'], $url, $action, $options);
     }
-
-    public static function delete($url, $executeMethod, $name = null){
-
-        $executeMethod = explode('@', $executeMethod);
-        $class = $executeMethod[0];
-        $method = $executeMethod[1];
-        global $routes;
-        array_push($routes['delete'], array('url' => trim($url, "/ "), 'class' => $class, 'method' => $method, 'name' => $name));
+    public static function put($url, $action, $options = [])
+    {
+        self::add(['put'], $url, $action, $options);
     }
-
-
+    public static function patch($url, $action, $options = [])
+    {
+        self::add(['patch'], $url, $action, $options);
+    }
+    public static function delete($url, $action, $options = [])
+    {
+        self::add(['delete'], $url, $action, $options);
+    }
+    public static function option($url, $action, $options = [])
+    {
+        self::add(['option'], $url, $action, $options);
+    }
+    public static function routes()
+    {
+        global $routes;
+        return $routes;
+    }
 }

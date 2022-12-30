@@ -2,127 +2,119 @@
 
 namespace System\Router;
 
-use ReflectionMethod;
+use System\Config\Config;
 
-class Routing{
+class Routing
+{
+  // private $current_route;
+  private $reserveRoute;
+  private $method_field;
+  private $routes;
+  private $values = [];
 
-    private $current_route;
-    private $method_field;
-    private $routes;
-    private $values = [];
+  public function __construct()
+  {
+    global $routes;
+    $this->routes = $routes;
+    $this->method_field = $this->methodField();
+    $this->reserveRoute = $this->findRoute(Config::get('app.CURRENT_ROUTE'));
+  }
 
-    public function __construct()
-    {
-        $this->current_route = explode('/', Config::get('app.CURRENT_ROUTE'));
-
-        $this->method_field = $this->methodField();
-
-        global $routes;
-        $this->routes = $routes;
-
-    }
-
-    public function run(){
-
-      $match = $this->match();
-      if(empty($match)){
-        $this->error404();
-      }
-     
-
-      $classPath = str_replace('\\', '/', $match["class"]);
-      $path = BASE_DIR . "/app/Http/Controllers/".$classPath.".php";
-      if(!file_exists($path)){
-        $this->error404();
-      }
-
-      $class = "\App\Http\Controllers\\".$match["class"];
-      $object = new $class();
-      if(method_exists($object, $match["method"])){
-        $reflection = new ReflectionMethod($class, $match["method"]);
-        $parameterCount = $reflection->getNumberOfParameters();
-        if($parameterCount <= count($this->values)){
-          call_user_func_array(array($object, $match["method"]), $this->values);
-        }
-        else{
-          $this->error404();
-        }
-      }
-      else{
-        $this->error404();
+  public function findRoute($currentRoute)
+  {
+    $currentRoute = substr($currentRoute, 0, 1) ===  "/" ? substr($currentRoute, 1) : $currentRoute;
+    foreach ($this->routes[$this->method_field] as $route) {
+      $routeRes = substr($route['url'], 0, 1) ===  "/" ? substr($route['url'], 1) : $route['url'];
+      if ($this->regexMatched($currentRoute,   $routeRes)) {
+        return $route;
       }
     }
+  }
+  public function regexMatched($currentRoute, $route)
+  {
+    $route_pattern = preg_replace('/\//', '\\/', $route);
 
-    public function match(){
+    $route_pattern = preg_replace('/\{\?*([a-z]+)\}/', '(?<\1>[a-z0-9-]+)', $route_pattern);
 
-      $reservedRoutes = $this->routes[$this->method_field];
-      foreach ($reservedRoutes as $reservedRoute) {
-        if($this->compare($reservedRoute['url']) == true){
-          return ["class" => $reservedRoute['class'], "method" => $reservedRoute['method']];
-        }
-        else{
-           $this->values = [];
-        }
-      }
-      return [];
-    }
+    $route_pattern = '/^' . $route_pattern . '\/?$/i';
 
-    private function compare($reservedRouteUrl){
-
-      //part1
-      if(trim($reservedRouteUrl, '/') === ''){
-        return trim($this->current_route[0], '/') === '' ? true : false;
-      }
-
-      //part2
-      $reservedRouteUrlArray = explode('/', $reservedRouteUrl);
-      if(sizeof($this->current_route) != sizeof($reservedRouteUrlArray)){
-        return false;
-      }
-
-      //part3
-      foreach ($this->current_route as $key => $currentRouteElement) {
-        $reservedRouteUrlElement = $reservedRouteUrlArray[$key];
-        if(substr($reservedRouteUrlElement, 0, 1) == "{" && substr($reservedRouteUrlElement, -1) == "}"){
-          array_push($this->values, $currentRouteElement);
-        }
-        elseif($reservedRouteUrlElement != $currentRouteElement){
-          return false;
+    $res = preg_match($route_pattern, $currentRoute, $matches);
+    if ($res) {
+      foreach ($matches as $key => $matche) {
+        if (is_string($key)) {
+          $this->values[$key] = $matche;
         }
       }
       return true;
+    } else {
+      return false;
+    }
+    return true;
+  }
 
+  public function run()
+  {
+    if (is_null($this->reserveRoute)) {
+      $this->error404();
+    }
+    $this->dispatch($this->reserveRoute);
+  }
+
+
+  private function dispatch($route)
+  {
+    $action = $route['action'];
+    if (is_null($action) || empty($action)) {
+      return;
     }
 
-    public function error404(){
-
-      http_response_code(404);
-      include __DIR__ . DIRECTORY_SEPARATOR . 'View' . DIRECTORY_SEPARATOR . '404.php';
-      exit;
-
+    if (is_callable($action)) {
+      $result = $action();
+      if ($result != null)
+        var_dump($action());
     }
 
-    public function methodField(){
-
-        $method_field = strtolower($_SERVER['REQUEST_METHOD']);
-
-        if($method_field == 'post'){
-
-            if(isset($_POST['_method'])){
-
-                if($_POST['_method'] == 'put'){
-                    $method_field = 'put';
-                }
-                elseif($_POST['_method'] == 'delete'){
-                    $method_field = 'delete';
-                }
-            }
-
+    if (is_string($action)) {
+      $action = list($controller, $method) = explode('@', $action);
+    }
+    if (is_array($action)) {
+      if (file_exists(Config::get('app.BASE_DIR') . "/app/Http/Controllers/$controller.php")) {
+        $controller = '\App\Http\Controllers\\' . $controller;
+        $object = new  $controller();
+        if (method_exists($object, $method)) {
+          call_user_func_array([$object, $method], $this->values);
+        } else {
+          $this->error404();
         }
-        return $method_field;
-
+      } else {
+        $this->error404();
+      }
     }
+  }
+  public function error404()
+  {
 
+    http_response_code(404);
+    include __DIR__ . DIRECTORY_SEPARATOR . 'View' . DIRECTORY_SEPARATOR . '404.php';
+    exit;
+  }
 
+  public function methodField()
+  {
 
+    $method_field = strtolower($_SERVER['REQUEST_METHOD']);
+
+    if ($method_field == 'post') {
+
+      if (isset($_POST['_method'])) {
+
+        if ($_POST['_method'] == 'put') {
+          $method_field = 'put';
+        } elseif ($_POST['_method'] == 'delete') {
+          $method_field = 'delete';
+        }
+      }
+    }
+    return $method_field;
+  }
 }
