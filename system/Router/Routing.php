@@ -18,6 +18,25 @@ class Routing
     $this->routes = $routes;
     $this->method_field = $this->methodField();
     $this->reserveRoute = $this->findRoute(Config::get('app.CURRENT_ROUTE'));
+    $this->runMiddleware();
+  }
+
+  private function runMiddleware()
+  {
+    if (isset($this->reserveRoute['options']['middleware'])) {
+      $middleware = $this->reserveRoute['options']['middleware'];
+      if (is_array($middleware)) {
+        foreach ($middleware as $middlewareClass) {
+          $obj = new  $middlewareClass();
+          $obj->handle();
+        }
+      } else {
+        $obj = new  $middleware();
+        $result = $obj->handle();
+        if ($result != null)
+          var_dump($result);
+      }
+    }
   }
 
   public function findRoute($currentRoute)
