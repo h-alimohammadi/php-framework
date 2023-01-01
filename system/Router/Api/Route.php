@@ -2,27 +2,22 @@
 
 namespace System\Router\Api;
 
-class Route{
+class Route
+{
 
-    public static function get($url, $executeMethod, $name = null){
-
-        $executeMethod = explode('@', $executeMethod);
-        $class = $executeMethod[0];
-        $method = $executeMethod[1];
+    public static function add($methods, $url, $action, $options)
+    {
         global $routes;
-        array_push($routes['get'], array('url' => "api/".trim($url, "/ "), 'class' => $class, 'method' => $method, 'name' => $name));
+        foreach ($methods as $method) {
+            array_push($routes[$method], ['url' => $url, 'action' => $action, 'options' => $options]);
+        }
     }
-
-    public static function post($url, $executeMethod, $name = null){
-
-        $executeMethod = explode('@', $executeMethod);
-        $class = $executeMethod[0];
-        $method = $executeMethod[1];
-        global $routes;
-        array_push($routes['post'], array('url' => "api/".trim($url, "/ "), 'class' => $class, 'method' => $method, 'name' => $name));
+    public static function get($url, $action, $options = [])
+    {
+        self::add(['get'], $url, $action, $options);
     }
-
-   
-
+    public static function post($url, $action, $options = [])
+    {
+        self::add(['post'], $url, $action, $options);
+    }
 }
-

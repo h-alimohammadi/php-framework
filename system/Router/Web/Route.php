@@ -5,7 +5,7 @@ namespace System\Router\Web;
 class Route
 {
 
-    public static function add($methods, $url, $action, $options)
+    public static function add($methods, $url, $action, $options=[])
     {
         global $routes;
         foreach ($methods as $method) {
