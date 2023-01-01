@@ -1,5 +1,7 @@
 <?php
 
+use System\Config\Config;
+
 return [
     "
     -- phpMyAdmin SQL Dump
@@ -17,7 +19,7 @@ START TRANSACTION;
 SET time_zone = \"+00:00\";
 
 --
--- Database: `mvc_ads`
+-- Database: `".Config::get('database.DB_NAME')."`
 --
 
 -- --------------------------------------------------------
