@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'DBHOST' => '127.0.0.1',
-    'DBNAME' => 'mvc_ads',
-    'DBUSERNAME' => 'root',
-    'DBPASSWORD' => ''
+    'DB_HOST' => 'localhost',
+    'DB_NAME' => 'amlack',
+    'DB_USERNAME' => 'root',
+    'DB_PASSWORD' => ''
 ];
