@@ -5,6 +5,7 @@ namespace System\Database\DBConnection;
 
 use PDO;
 use PDOException;
+use System\Config\Config;
 
 class DBConnection{
 
@@ -29,7 +30,7 @@ class DBConnection{
 
         $options = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC);
         try{
-            return new PDO("mysql:host=" . DBHOST . ";dbname=" . DBNAME, DBUSERNAME, DBPASSWORD, $options);
+            return new PDO("mysql:host=" . Config::get('database.DB_HOST') . ";dbname=" . Config::get('database.DB_NAME'), Config::get('database.DB_USERNAME'), Config::get('database.DB_PASSWORD'), $options);
         }
         catch (PDOException $e){
             echo "error in database connection: " . $e->getMessage();
