@@ -106,8 +106,9 @@ function currentDomain()
 
 function redirect($url)
 {
-    $url = trim($url, '/ ');
-    $url = strpos($url, currentDomain()) === 0 ?  $url : currentDomain() . '/' . $url;
+    $url = $url == '/' ? $url : trim($url, '/ ');
+    $separatorAndUrl = $url == '/' ? $url : '/' . $url;
+    $url = strpos($url, currentDomain()) === 0 ?  $url : currentDomain() . $separatorAndUrl;
     header("Location: " . $url);
     exit;
 }
@@ -163,10 +164,10 @@ function route($name, $params = [])
     }
     foreach ($routeParamsMatch[0] as $key => $routeMatch) {
         $param = array_pop($params);
-        if(!is_null($param) && !empty($param)){
+        if (!is_null($param) && !empty($param)) {
             $route = str_replace($routeMatch, $param, $route);
-        }else{
-            throw new Exception("route param \"".str_replace(['{','}'],'',$routeMatch)."\" is null!!");
+        } else {
+            throw new Exception("route param \"" . str_replace(['{', '}'], '', $routeMatch) . "\" is null!!");
         }
     }
     return currentDomain() . "/" . trim($route, " /");
