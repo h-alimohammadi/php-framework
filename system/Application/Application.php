@@ -2,7 +2,6 @@
 
 namespace System\Application;
 
-use System\Config\Config;
 
 class Application
 {

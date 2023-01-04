@@ -2,9 +2,7 @@
 
 namespace System\View;
 
-use App\Providers\AppServiceProvider;
 use System\View\Traits\HasViewLoader;
-use Exception;
 use System\View\Traits\HasExtendsContent;
 use System\View\Traits\HasIncludeContent;
 

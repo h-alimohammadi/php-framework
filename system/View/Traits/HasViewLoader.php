@@ -2,6 +2,8 @@
 
 namespace  System\View\Traits;
 
+use System\Config\Config;
+
 trait HasViewLoader
 {
 
@@ -11,10 +13,10 @@ trait HasViewLoader
     {
         $dir = trim($dir, " .");
         $dir = str_replace(".", "/", $dir);
-        if(file_exists(dirname(dirname(dirname(__DIR__)))."/resources/view/$dir.blade.php"))
+        if(file_exists(Config::get('app.BASE_DIR')."/resources/view/$dir.blade.php"))
         {
             $this->registerView($dir);
-            $content = htmlentities(file_get_contents(dirname(dirname(dirname(__DIR__)))."/resources/view/$dir.blade.php"));
+            $content = htmlentities(file_get_contents(Config::get('app.BASE_DIR')."/resources/view/$dir.blade.php"));
             return $content;
         }
         else{
