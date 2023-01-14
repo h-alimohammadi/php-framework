@@ -11,10 +11,6 @@ class DBConnection{
 
     private static $dbConnectionInstance = null;
 
-    private function __construct(){
-
-    }
-
     public static function getDBConnectionInstance(){
 
         if(self::$dbConnectionInstance == null){
