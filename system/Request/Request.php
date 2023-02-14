@@ -6,6 +6,7 @@ namespace System\Request;
 use System\Request\Traits\HasFileValidationRules;
 use System\Request\Traits\HasRunValidation;
 use System\Request\Traits\HasValidationRules;
+use System\Validation\Validator;
 
 class Request
 {
@@ -35,22 +36,7 @@ class Request
     }
 
     protected function run($rules){
-        foreach($rules as $att => $values){
-            $ruleArray = explode('|', $values);
-            if(in_array('file', $ruleArray))
-            {
-                unset($ruleArray[array_search('file', $ruleArray)]);
-                $this->fileValidation($att, $ruleArray);
-            }
-            elseif(in_array('number', $ruleArray))
-            {
-                $this->numberValidation($att, $ruleArray);
-            }
-            else
-            {
-                $this->normalValidation($att, $ruleArray);
-            }
-        }
+        Validator::validate($rules);    
     }
 
     public function file($name){
@@ -68,6 +54,11 @@ class Request
     public function all(){
        return $this->request;
     }
+    
+    public function hasErrorExist(){
+       return $this->errorExist;
+    }
+
 
 
 }

@@ -115,6 +115,7 @@ trait HasQueryBuilder
         //     sizeof($this->values) > 0 ? $statement->execute(array_values($this->values)) : $statement->execute();
         // }
         sizeof($this->bindValues) > 0 ? $statement->execute($this->bindValues) : $statement->execute();
+
         return $statement;
     }
 

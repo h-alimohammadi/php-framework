@@ -8,6 +8,7 @@ class SessionProvider extends Provider
     {
 
         session_start();
+        
         if(isset($_SESSION['temporary_flash'])) unset($_SESSION['temporary_flash']);
         if(isset($_SESSION['temporary_errorFlash'])) unset($_SESSION['temporary_errorFlash']);
         if(isset($_SESSION['old'])) unset($_SESSION['temporary_old']);

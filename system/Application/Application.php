@@ -11,6 +11,7 @@ class Application
         $this->loadProviders();
         $this->loadHelpers();
         $this->registerRoutes();
+        $this->errorHandling();
         $this->routing();
     }
 
@@ -36,6 +37,11 @@ class Application
         $routes = ['get' => [], 'post' => [], 'put' => [], 'patch' => [], 'delete' => [], 'option' => []];
         require_once(dirname(dirname(__DIR__)) . '/routes/web.php');
         require_once(dirname(dirname(__DIR__)) . '/routes/api.php');
+    }
+    private function errorHandling(){
+        error_reporting(E_ALL);
+        set_error_handler('System\Error\Error::errorHandler');
+        set_exception_handler('System\Error\Error::exceptionHandler');
     }
     private function routing()
     {

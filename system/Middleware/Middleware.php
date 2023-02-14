@@ -12,6 +12,7 @@ abstract class Middleware implements MiddlewareInterface{
     }
 
     private function readMiddleware(){
-
+        //code
     }
+    
 }

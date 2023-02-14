@@ -1,0 +1,247 @@
+[25-Jan-2023 07:10:38 Europe/Berlin] 
+Fatal error
+Uncaught exception: 'Exception'
+Message : 'view [app.indexs] not Found!!!!'
+Stack trace: #0 C:\xampp\htdocs\amlack\system\View\ViewBuilder.php(18): System\View\ViewBuilder->viewLoader('app/indexs')
+#1 C:\xampp\htdocs\amlack\system\helpers\helpers.php(13): System\View\ViewBuilder->run('app.indexs')
+#2 C:\xampp\htdocs\amlack\app\Http\Controllers\HomeController.php(23): view('app.indexs', Array)
+#3 [internal function]: App\Http\Controllers\HomeController->index()
+#4 C:\xampp\htdocs\amlack\system\Router\Routing.php(107): call_user_func_array(Array, Array)
+#5 C:\xampp\htdocs\amlack\system\Router\Routing.php(82): System\Router\Routing->dispatch(Array)
+#6 C:\xampp\htdocs\amlack\system\Application\Application.php(49): System\Router\Routing->run()
+#7 C:\xampp\htdocs\amlack\system\Application\Application.php(15): System\Application\Application->routing()
+#8 C:\xampp\htdocs\amlack\bootstrap\app.php(3): System\Application\Application->__construct()
+#9 C:\xampp\htdocs\amlack\public\index.php(5): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+Thrown in 'C:\xampp\htdocs\amlack\system\View\Traits\HasViewLoader.php' on line 24
+
+
+
+*************************************************************************
+
+
+
+[25-Jan-2023 09:08:08 Europe/Berlin] 
+Fatal error
+Uncaught exception: 'Exception'
+Message : 'view [app.indexs] not Found!!!!'
+Stack trace: #0 C:\xampp\htdocs\amlack\system\View\ViewBuilder.php(18): System\View\ViewBuilder->viewLoader('app/indexs')
+#1 C:\xampp\htdocs\amlack\system\helpers\helpers.php(13): System\View\ViewBuilder->run('app.indexs')
+#2 C:\xampp\htdocs\amlack\app\Http\Controllers\HomeController.php(23): view('app.indexs', Array)
+#3 [internal function]: App\Http\Controllers\HomeController->index()
+#4 C:\xampp\htdocs\amlack\system\Router\Routing.php(107): call_user_func_array(Array, Array)
+#5 C:\xampp\htdocs\amlack\system\Router\Routing.php(82): System\Router\Routing->dispatch(Array)
+#6 C:\xampp\htdocs\amlack\system\Application\Application.php(49): System\Router\Routing->run()
+#7 C:\xampp\htdocs\amlack\system\Application\Application.php(15): System\Application\Application->routing()
+#8 C:\xampp\htdocs\amlack\bootstrap\app.php(3): System\Application\Application->__construct()
+#9 C:\xampp\htdocs\amlack\public\index.php(5): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+Thrown in 'C:\xampp\htdocs\amlack\system\View\Traits\HasViewLoader.php' on line 24
+
+*************************************************************************
+
+
+
+[25-Jan-2023 09:08:08 Europe/Berlin] PHP Fatal error:  Uncaught ErrorException: require(C:\xampp\htdocs\amlack\system/View/500.blade.php): failed to open stream: No such file or directory in C:\xampp\htdocs\amlack\system\Error\Error.php:44
+Stack trace:
+#0 C:\xampp\htdocs\amlack\system\Error\Error.php(44): System\Error\Error::errorHandler(2, 'require(C:\\xamp...', 'C:\\xampp\\htdocs...', 44, Array)
+#1 C:\xampp\htdocs\amlack\system\Error\Error.php(44): require()
+#2 [internal function]: System\Error\Error::exceptionHandler(Object(Exception))
+#3 {main}
+  thrown in C:\xampp\htdocs\amlack\system\Error\Error.php on line 44
+[25-Jan-2023 09:08:44 Europe/Berlin] 
+Fatal error
+Uncaught exception: 'Exception'
+Message : 'view [app.indexs] not Found!!!!'
+Stack trace: #0 C:\xampp\htdocs\amlack\system\View\ViewBuilder.php(18): System\View\ViewBuilder->viewLoader('app/indexs')
+#1 C:\xampp\htdocs\amlack\system\helpers\helpers.php(13): System\View\ViewBuilder->run('app.indexs')
+#2 C:\xampp\htdocs\amlack\app\Http\Controllers\HomeController.php(23): view('app.indexs', Array)
+#3 [internal function]: App\Http\Controllers\HomeController->index()
+#4 C:\xampp\htdocs\amlack\system\Router\Routing.php(107): call_user_func_array(Array, Array)
+#5 C:\xampp\htdocs\amlack\system\Router\Routing.php(82): System\Router\Routing->dispatch(Array)
+#6 C:\xampp\htdocs\amlack\system\Application\Application.php(49): System\Router\Routing->run()
+#7 C:\xampp\htdocs\amlack\system\Application\Application.php(15): System\Application\Application->routing()
+#8 C:\xampp\htdocs\amlack\bootstrap\app.php(3): System\Application\Application->__construct()
+#9 C:\xampp\htdocs\amlack\public\index.php(5): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+Thrown in 'C:\xampp\htdocs\amlack\system\View\Traits\HasViewLoader.php' on line 24
+
+*************************************************************************
+
+
+
+[25-Jan-2023 09:08:44 Europe/Berlin] PHP Fatal error:  Uncaught ErrorException: require(C:\xampp\htdocs\amlack\system\Error/View/500.blade.php): failed to open stream: No such file or directory in C:\xampp\htdocs\amlack\system\Error\Error.php:44
+Stack trace:
+#0 C:\xampp\htdocs\amlack\system\Error\Error.php(44): System\Error\Error::errorHandler(2, 'require(C:\\xamp...', 'C:\\xampp\\htdocs...', 44, Array)
+#1 C:\xampp\htdocs\amlack\system\Error\Error.php(44): require()
+#2 [internal function]: System\Error\Error::exceptionHandler(Object(Exception))
+#3 {main}
+  thrown in C:\xampp\htdocs\amlack\system\Error\Error.php on line 44
+[25-Jan-2023 09:09:18 Europe/Berlin] 
+Fatal error
+Uncaught exception: 'Exception'
+Message : 'view [app.indexs] not Found!!!!'
+Stack trace: #0 C:\xampp\htdocs\amlack\system\View\ViewBuilder.php(18): System\View\ViewBuilder->viewLoader('app/indexs')
+#1 C:\xampp\htdocs\amlack\system\helpers\helpers.php(13): System\View\ViewBuilder->run('app.indexs')
+#2 C:\xampp\htdocs\amlack\app\Http\Controllers\HomeController.php(23): view('app.indexs', Array)
+#3 [internal function]: App\Http\Controllers\HomeController->index()
+#4 C:\xampp\htdocs\amlack\system\Router\Routing.php(107): call_user_func_array(Array, Array)
+#5 C:\xampp\htdocs\amlack\system\Router\Routing.php(82): System\Router\Routing->dispatch(Array)
+#6 C:\xampp\htdocs\amlack\system\Application\Application.php(49): System\Router\Routing->run()
+#7 C:\xampp\htdocs\amlack\system\Application\Application.php(15): System\Application\Application->routing()
+#8 C:\xampp\htdocs\amlack\bootstrap\app.php(3): System\Application\Application->__construct()
+#9 C:\xampp\htdocs\amlack\public\index.php(5): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+Thrown in 'C:\xampp\htdocs\amlack\system\View\Traits\HasViewLoader.php' on line 24
+
+*************************************************************************
+
+
+
+[25-Jan-2023 09:10:19 Europe/Berlin] 
+Fatal error
+Uncaught exception: 'Exception'
+Message : 'view [app.indexs] not Found!!!!'
+Stack trace: #0 C:\xampp\htdocs\amlack\system\View\ViewBuilder.php(18): System\View\ViewBuilder->viewLoader('app/indexs')
+#1 C:\xampp\htdocs\amlack\system\helpers\helpers.php(13): System\View\ViewBuilder->run('app.indexs')
+#2 C:\xampp\htdocs\amlack\app\Http\Controllers\HomeController.php(23): view('app.indexs', Array)
+#3 [internal function]: App\Http\Controllers\HomeController->index()
+#4 C:\xampp\htdocs\amlack\system\Router\Routing.php(107): call_user_func_array(Array, Array)
+#5 C:\xampp\htdocs\amlack\system\Router\Routing.php(82): System\Router\Routing->dispatch(Array)
+#6 C:\xampp\htdocs\amlack\system\Application\Application.php(49): System\Router\Routing->run()
+#7 C:\xampp\htdocs\amlack\system\Application\Application.php(15): System\Application\Application->routing()
+#8 C:\xampp\htdocs\amlack\bootstrap\app.php(3): System\Application\Application->__construct()
+#9 C:\xampp\htdocs\amlack\public\index.php(5): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+Thrown in 'C:\xampp\htdocs\amlack\system\View\Traits\HasViewLoader.php' on line 24
+
+*************************************************************************
+
+
+
+[25-Jan-2023 09:10:33 Europe/Berlin] 
+Fatal error
+Uncaught exception: 'Exception'
+Message : 'view [app.indexs] not Found!!!!'
+Stack trace: #0 C:\xampp\htdocs\amlack\system\View\ViewBuilder.php(18): System\View\ViewBuilder->viewLoader('app/indexs')
+#1 C:\xampp\htdocs\amlack\system\helpers\helpers.php(13): System\View\ViewBuilder->run('app.indexs')
+#2 C:\xampp\htdocs\amlack\app\Http\Controllers\HomeController.php(23): view('app.indexs', Array)
+#3 [internal function]: App\Http\Controllers\HomeController->index()
+#4 C:\xampp\htdocs\amlack\system\Router\Routing.php(107): call_user_func_array(Array, Array)
+#5 C:\xampp\htdocs\amlack\system\Router\Routing.php(82): System\Router\Routing->dispatch(Array)
+#6 C:\xampp\htdocs\amlack\system\Application\Application.php(49): System\Router\Routing->run()
+#7 C:\xampp\htdocs\amlack\system\Application\Application.php(15): System\Application\Application->routing()
+#8 C:\xampp\htdocs\amlack\bootstrap\app.php(3): System\Application\Application->__construct()
+#9 C:\xampp\htdocs\amlack\public\index.php(5): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+Thrown in 'C:\xampp\htdocs\amlack\system\View\Traits\HasViewLoader.php' on line 24
+
+*************************************************************************
+
+
+
+[25-Jan-2023 09:11:38 Europe/Berlin] 
+Fatal error
+Uncaught exception: 'Exception'
+Message : 'view [app.indexs] not Found!!!!'
+Stack trace: #0 C:\xampp\htdocs\amlack\system\View\ViewBuilder.php(18): System\View\ViewBuilder->viewLoader('app/indexs')
+#1 C:\xampp\htdocs\amlack\system\helpers\helpers.php(13): System\View\ViewBuilder->run('app.indexs')
+#2 C:\xampp\htdocs\amlack\app\Http\Controllers\HomeController.php(23): view('app.indexs', Array)
+#3 [internal function]: App\Http\Controllers\HomeController->index()
+#4 C:\xampp\htdocs\amlack\system\Router\Routing.php(107): call_user_func_array(Array, Array)
+#5 C:\xampp\htdocs\amlack\system\Router\Routing.php(82): System\Router\Routing->dispatch(Array)
+#6 C:\xampp\htdocs\amlack\system\Application\Application.php(49): System\Router\Routing->run()
+#7 C:\xampp\htdocs\amlack\system\Application\Application.php(15): System\Application\Application->routing()
+#8 C:\xampp\htdocs\amlack\bootstrap\app.php(3): System\Application\Application->__construct()
+#9 C:\xampp\htdocs\amlack\public\index.php(5): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+Thrown in 'C:\xampp\htdocs\amlack\system\View\Traits\HasViewLoader.php' on line 24
+
+*************************************************************************
+
+
+
+[25-Jan-2023 09:11:39 Europe/Berlin] 
+Fatal error
+Uncaught exception: 'Exception'
+Message : 'view [app.indexs] not Found!!!!'
+Stack trace: #0 C:\xampp\htdocs\amlack\system\View\ViewBuilder.php(18): System\View\ViewBuilder->viewLoader('app/indexs')
+#1 C:\xampp\htdocs\amlack\system\helpers\helpers.php(13): System\View\ViewBuilder->run('app.indexs')
+#2 C:\xampp\htdocs\amlack\app\Http\Controllers\HomeController.php(23): view('app.indexs', Array)
+#3 [internal function]: App\Http\Controllers\HomeController->index()
+#4 C:\xampp\htdocs\amlack\system\Router\Routing.php(107): call_user_func_array(Array, Array)
+#5 C:\xampp\htdocs\amlack\system\Router\Routing.php(82): System\Router\Routing->dispatch(Array)
+#6 C:\xampp\htdocs\amlack\system\Application\Application.php(49): System\Router\Routing->run()
+#7 C:\xampp\htdocs\amlack\system\Application\Application.php(15): System\Application\Application->routing()
+#8 C:\xampp\htdocs\amlack\bootstrap\app.php(3): System\Application\Application->__construct()
+#9 C:\xampp\htdocs\amlack\public\index.php(5): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+Thrown in 'C:\xampp\htdocs\amlack\system\View\Traits\HasViewLoader.php' on line 24
+
+*************************************************************************
+
+
+
+[25-Jan-2023 09:12:05 Europe/Berlin] 
+Fatal error
+Uncaught exception: 'Exception'
+Message : 'view [app.indexs] not Found!!!!'
+Stack trace: #0 C:\xampp\htdocs\amlack\system\View\ViewBuilder.php(18): System\View\ViewBuilder->viewLoader('app/indexs')
+#1 C:\xampp\htdocs\amlack\system\helpers\helpers.php(13): System\View\ViewBuilder->run('app.indexs')
+#2 C:\xampp\htdocs\amlack\app\Http\Controllers\HomeController.php(23): view('app.indexs', Array)
+#3 [internal function]: App\Http\Controllers\HomeController->index()
+#4 C:\xampp\htdocs\amlack\system\Router\Routing.php(107): call_user_func_array(Array, Array)
+#5 C:\xampp\htdocs\amlack\system\Router\Routing.php(82): System\Router\Routing->dispatch(Array)
+#6 C:\xampp\htdocs\amlack\system\Application\Application.php(49): System\Router\Routing->run()
+#7 C:\xampp\htdocs\amlack\system\Application\Application.php(15): System\Application\Application->routing()
+#8 C:\xampp\htdocs\amlack\bootstrap\app.php(3): System\Application\Application->__construct()
+#9 C:\xampp\htdocs\amlack\public\index.php(5): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+Thrown in 'C:\xampp\htdocs\amlack\system\View\Traits\HasViewLoader.php' on line 24
+
+*************************************************************************
+
+
+
+[25-Jan-2023 09:13:09 Europe/Berlin] 
+Fatal error
+Uncaught exception: 'Exception'
+Message : 'view [app.indexs] not Found!!!!'
+Stack trace: #0 C:\xampp\htdocs\amlack\system\View\ViewBuilder.php(18): System\View\ViewBuilder->viewLoader('app/indexs')
+#1 C:\xampp\htdocs\amlack\system\helpers\helpers.php(13): System\View\ViewBuilder->run('app.indexs')
+#2 C:\xampp\htdocs\amlack\app\Http\Controllers\HomeController.php(23): view('app.indexs', Array)
+#3 [internal function]: App\Http\Controllers\HomeController->index()
+#4 C:\xampp\htdocs\amlack\system\Router\Routing.php(107): call_user_func_array(Array, Array)
+#5 C:\xampp\htdocs\amlack\system\Router\Routing.php(82): System\Router\Routing->dispatch(Array)
+#6 C:\xampp\htdocs\amlack\system\Application\Application.php(49): System\Router\Routing->run()
+#7 C:\xampp\htdocs\amlack\system\Application\Application.php(15): System\Application\Application->routing()
+#8 C:\xampp\htdocs\amlack\bootstrap\app.php(3): System\Application\Application->__construct()
+#9 C:\xampp\htdocs\amlack\public\index.php(5): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+Thrown in 'C:\xampp\htdocs\amlack\system\View\Traits\HasViewLoader.php' on line 24
+
+*************************************************************************
+
+
+
+[25-Jan-2023 09:13:54 Europe/Berlin] 
+Fatal error
+Uncaught exception: 'Exception'
+Message : 'view [app.indexs] not Found!!!!'
+Stack trace: #0 C:\xampp\htdocs\amlack\system\View\ViewBuilder.php(18): System\View\ViewBuilder->viewLoader('app/indexs')
+#1 C:\xampp\htdocs\amlack\system\helpers\helpers.php(13): System\View\ViewBuilder->run('app.indexs')
+#2 C:\xampp\htdocs\amlack\app\Http\Controllers\HomeController.php(23): view('app.indexs', Array)
+#3 [internal function]: App\Http\Controllers\HomeController->index()
+#4 C:\xampp\htdocs\amlack\system\Router\Routing.php(107): call_user_func_array(Array, Array)
+#5 C:\xampp\htdocs\amlack\system\Router\Routing.php(82): System\Router\Routing->dispatch(Array)
+#6 C:\xampp\htdocs\amlack\system\Application\Application.php(49): System\Router\Routing->run()
+#7 C:\xampp\htdocs\amlack\system\Application\Application.php(15): System\Application\Application->routing()
+#8 C:\xampp\htdocs\amlack\bootstrap\app.php(3): System\Application\Application->__construct()
+#9 C:\xampp\htdocs\amlack\public\index.php(5): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+Thrown in 'C:\xampp\htdocs\amlack\system\View\Traits\HasViewLoader.php' on line 24
+
+*************************************************************************
+
+
+

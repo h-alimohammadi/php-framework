@@ -13,10 +13,10 @@ function view($dir, $vars = [])
     $viewBuilder->run($dir);
     $viewVars = $viewBuilder->vars;
     $content = $viewBuilder->content;
-    empty($viewVars) ?: extract($viewVars);
-    empty($vars) ?: extract($vars);
+    empty($viewVars) ? : extract($viewVars);
+    empty($vars) ? : extract($vars);
 
-    eval(" ?> " . html_entity_decode($content));
+    eval(" ?> ".html_entity_decode($content));
 }
 
 function html($text)
@@ -80,9 +80,13 @@ function error($name, $message = null)
     }
 }
 
-function errorExists($name)
+function errorExists($name = null)
 {
-    return isset($_SESSION["temporary_errorFlash"][$name]) === true ? true : false;
+    if ($name === null) {
+        return isset($_SESSION["temporary_errorFlash"]) === true ? count($_SESSION["temporary_errorFlash"]) : false;
+    } else {
+        return isset($_SESSION["temporary_errorFlash"][$name]) === true ? true : false;
+    }
 }
 
 function allErrors()
@@ -162,6 +166,7 @@ function route($name, $params = [])
     if (count($routeParamsMatch[0]) > count($params)) {
         throw new Exception('route params not enough!!');
     }
+
     foreach ($routeParamsMatch[0] as $key => $routeMatch) {
         $param = array_pop($params);
         if (!is_null($param) && !empty($param)) {
@@ -170,6 +175,7 @@ function route($name, $params = [])
             throw new Exception("route param \"" . str_replace(['{', '}'], '', $routeMatch) . "\" is null!!");
         }
     }
+
     return currentDomain() . "/" . trim($route, " /");
 }
 
@@ -209,5 +215,5 @@ function array_dot($array, $return_array = array(), $return_key = '')
 
 function currentUrl()
 {
-    currentDomain() . $_SERVER['REQUEST_URI'];
+    return currentDomain() . $_SERVER['REQUEST_URI'];
 }

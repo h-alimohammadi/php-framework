@@ -1,0 +1,47 @@
+[28-Jan-2023 01:06:47 Europe/Berlin] 
+Fatal error
+Uncaught exception: 'PHPMailer\PHPMailer\Exception'
+Message : 'route not found'
+Stack trace: #0 C:\xampp\htdocs\amlack\system\Application\Application.php(49): System\Router\Routing->run()
+#1 C:\xampp\htdocs\amlack\system\Application\Application.php(15): System\Application\Application->routing()
+#2 C:\xampp\htdocs\amlack\bootstrap\app.php(3): System\Application\Application->__construct()
+#3 C:\xampp\htdocs\amlack\public\index.php(5): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+Thrown in 'C:\xampp\htdocs\amlack\system\Router\Routing.php' on line 78
+
+*************************************************************************
+
+
+
+[28-Jan-2023 01:28:07 Europe/Berlin] 
+Fatal error
+Uncaught exception: 'Error'
+Message : 'Class '\App\Http\Controllers\Api\v1\AdsController' not found'
+Stack trace: #0 C:\xampp\htdocs\amlack\system\Router\Routing.php(82): System\Router\Routing->dispatch(Array)
+#1 C:\xampp\htdocs\amlack\system\Application\Application.php(49): System\Router\Routing->run()
+#2 C:\xampp\htdocs\amlack\system\Application\Application.php(15): System\Application\Application->routing()
+#3 C:\xampp\htdocs\amlack\bootstrap\app.php(3): System\Application\Application->__construct()
+#4 C:\xampp\htdocs\amlack\public\index.php(5): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+Thrown in 'C:\xampp\htdocs\amlack\system\Router\Routing.php' on line 105
+
+*************************************************************************
+
+
+
+[28-Jan-2023 01:28:40 Europe/Berlin] 
+Fatal error
+Uncaught exception: 'Error'
+Message : 'Class '\App\Http\Controllers\Api\v1\AdsController' not found'
+Stack trace: #0 C:\xampp\htdocs\amlack\system\Router\Routing.php(82): System\Router\Routing->dispatch(Array)
+#1 C:\xampp\htdocs\amlack\system\Application\Application.php(49): System\Router\Routing->run()
+#2 C:\xampp\htdocs\amlack\system\Application\Application.php(15): System\Application\Application->routing()
+#3 C:\xampp\htdocs\amlack\bootstrap\app.php(3): System\Application\Application->__construct()
+#4 C:\xampp\htdocs\amlack\public\index.php(5): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+Thrown in 'C:\xampp\htdocs\amlack\system\Router\Routing.php' on line 105
+
+*************************************************************************
+
+
+

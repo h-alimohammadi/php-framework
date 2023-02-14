@@ -3,7 +3,6 @@
 namespace App\Providers;
 
 use App\Ads;
-use App\Category;
 use App\Post;
 use App\User;
 use System\View\Composer;
@@ -12,7 +11,7 @@ class AppServiceProvider extends Provider
 {
     public function boot()
     {
-        Composer::view("app.index", function (){
+        Composer::view("app.index", function () {
             $ads = Ads::all();
             $sumArea = 0;
             foreach ($ads as $advertise)
@@ -28,6 +27,5 @@ class AppServiceProvider extends Provider
                 "postsCount"    => $postsCount
             ];
         });
-
     }
 }

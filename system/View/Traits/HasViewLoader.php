@@ -20,7 +20,8 @@ trait HasViewLoader
             return $content;
         }
         else{
-            throw new \Exception('view not Found!!!!');
+            $path = str_replace('/','.',$dir);
+            throw new \InvalidArgumentException("view [$path] not Found!!!!");
         }
     }
 

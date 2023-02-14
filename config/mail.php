@@ -2,10 +2,10 @@
 
 return [
     'SMTP' => [
-        'Host'       => 'smtp.mailtrap.io',
+        'Host'       => 'smtp.google.io',
         'SMTPAuth'   => true,
-        'Username'   => '33',
-        'Password'   => '22',
+        'UserName'   => 'entezar.h173@gmail.com',
+        'Password'   => 'Hossein1245@#6b',
         'Port'       => 587,
         'setFrom'    => [
             'mail'  =>  'support@amlak.com',

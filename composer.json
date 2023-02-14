@@ -1,5 +1,9 @@
 {
-    "require": {},
+    "require": {
+        "intervention/image": "^2.7",
+        "phpmailer/phpmailer": "^6.7",
+        "morilog/jalali": "3.*"
+    },
     "autoload": {
         "psr-4": {
             "App\\": "app/",
