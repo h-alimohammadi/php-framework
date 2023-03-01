@@ -2,12 +2,13 @@
 
 namespace System\Validation;
 
+use System\Request\Traits\HasRunValidation;
 use System\Validation\Contract\ValidationInterface;
 use System\Validation\Rules\HasValidationRules;
 
 class ValidationNormal implements ValidationInterface
 {
-    use HasValidationRules;
+    use HasValidationRules,HasRunValidation;
 
     public function validate($name, $ruleArray)
     {

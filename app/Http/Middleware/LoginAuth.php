@@ -10,6 +10,7 @@ class LoginAuth extends Middleware
     public function handle()
     {
         if(Auth::check()){
+            // die('mmmmmmm');
             return redirect('/');
         }
     }

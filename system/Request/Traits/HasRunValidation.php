@@ -1,7 +1,6 @@
 <?php
 
-namespace System\Validation\Rules;
-
+namespace System\Request\Traits;
 
 trait HasRunValidation
 {
@@ -13,7 +12,7 @@ trait HasRunValidation
         return back();
     }
 
-    protected function checkFirstError($name)
+    private function checkFirstError($name)
     {
         if(!errorExists($name) && !in_array($name, $this->errorVariablesName)){
             return true;
@@ -21,12 +20,12 @@ trait HasRunValidation
         return false;
     }
 
-    protected function checkFieldExist($name)
+    private function checkFieldExist($name)
     {
         return (isset($this->request[$name]) && !empty($this->request[$name])) ? true : false;
     }
 
-    protected function checkFileExist($name)
+    private function checkFileExist($name)
     {
        if(isset($this->files[$name]['name'])){
            if(!empty($this->files[$name]['name'])){
@@ -36,7 +35,7 @@ trait HasRunValidation
        return false;
     }
 
-    protected function setError($name, $errorMessage)
+    private function setError($name, $errorMessage)
     {
         array_push($this->errorVariablesName, $name);
         error($name, $errorMessage);

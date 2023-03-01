@@ -71,10 +71,10 @@ section {
 }
   @font-face {
       font-family: Vazir;
-      src: url('http://fonts.codearena.ir/rastikerdar/vazir/vazir.eot');
-      src: url('http://fonts.codearena.ir/rastikerdar/vazir/vazir.eot?#iefix') format('embedded-opentype'),
-           url('http://fonts.codearena.ir/rastikerdar/vazir/vazir.woff') format('woff'),
-           url('http://fonts.codearena.ir/rastikerdar/vazir/vazir.ttf') format('truetype');
+      src: url('../fonts/vazir/Vazir.eot'),
+           url('../fonts/vazir/Vazir.woff') format('woff'),
+           url('../fonts/vazir/Vazir.woff2') format('woff2'),
+           url('../fonts/vazir/Vazir.ttf') format('truetype');
       font-weight: normal;
     }
       @font-face {
