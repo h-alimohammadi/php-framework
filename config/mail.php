@@ -4,11 +4,11 @@ return [
     'SMTP' => [
         'Host'       => 'smtp.google.io',
         'SMTPAuth'   => true,
-        'UserName'   => 'entezar.h173@gmail.com',
-        'Password'   => 'Hossein1245@#6b',
+        'UserName'   => 'test@gmail.com',
+        'Password'   => 'test',
         'Port'       => 587,
         'setFrom'    => [
-            'mail'  =>  'support@amlak.com',
+            'mail'  =>  'support@test.com',
             'name'  =>  'test'
         ]
     ]
